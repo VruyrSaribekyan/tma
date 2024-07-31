@@ -11,7 +11,7 @@
 
 1. Клонируйте репозиторий:
 
-   git clone https://github.com/USERNAME/telegram-clicker-game.git
+   git clone https://github.com/VruyrSaribekyan/tma.git
    cd telegram-clicker-game
 
 2. Установите зависимости:
