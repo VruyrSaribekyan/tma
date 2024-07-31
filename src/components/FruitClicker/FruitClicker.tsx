@@ -5,15 +5,20 @@ import Energy from '../Energy/Energy';
 import { fetchUserData, sendUserData } from '../../services/api';
 import { useInterval } from '../../hooks/useInterval';
 
-const FruitClicker = () => {
-    const [coins, setCoins] = useState(0);
-    const [energy, setEnergy] = useState(1000);
-    const [isAnimating, setIsAnimating] = useState(false);
-    const [tapCount, setTapCount] = useState(0);
-    const [tapPosition, setTapPosition] = useState({ x: 0, y: 0 });
+interface TapPosition {
+    x: number;
+    y: number;
+}
+
+const FruitClicker: React.FC = () => {
+    const [coins, setCoins] = useState<number>(0);
+    const [energy, setEnergy] = useState<number>(1000);
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
+    const [tapCount, setTapCount] = useState<number>(0);
+    const [tapPosition, setTapPosition] = useState<TapPosition>({ x: 0, y: 0 });
     const maxEnergy = 1000;
 
-    const handleTap = (numberOfTouches, clientX, clientY) => {
+    const handleTap = (numberOfTouches: number, clientX: number, clientY: number) => {
         if (energy >= numberOfTouches) {
             setCoins(coins + numberOfTouches);
             setEnergy(energy - numberOfTouches);
@@ -23,9 +28,9 @@ const FruitClicker = () => {
         }
     };
 
-    const handleClick = (event) => handleTap(1, event.clientX, event.clientY);
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => handleTap(1, event.clientX, event.clientY);
 
-    const handleTouchStart = (event) => {
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
         const numberOfTouches = event.touches.length;
         const touch = event.touches[0];
         handleTap(numberOfTouches, touch.clientX, touch.clientY);
@@ -68,16 +73,16 @@ const FruitClicker = () => {
             <div className='fruitbg'>
                 <div
                     className={`fruit ${isAnimating ? 'animate' : ''}`}
-                    onClick={handleClick}
-                    onTouchStart={handleTouchStart}
                 >
-                    <img style={{ cursor: 'pointer' }} src="fruit.png" alt="Fruit" />
+                    <img onClick={handleClick} onTouchStart={handleTouchStart} style={{ cursor: 'pointer' }} src="fruit.png" alt="Fruit" />
                     {isAnimating && (
-                        <div
-                            className="tap-count"
-                            style={{ top: tapPosition.y, left: tapPosition.x }}
-                        >
-                            +{tapCount}
+                        <div>
+                            <div
+                                className="tap-count"
+                                style={{ top: tapPosition.y, left: tapPosition.x }}
+                            >
+                                +{tapCount}
+                            </div>
                         </div>
                     )}
                 </div>
