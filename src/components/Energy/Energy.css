@@ -1,0 +1,44 @@
+.energy {
+    color: #fff;
+    position: absolute;
+    left: 27px;
+    top: 634px;
+    font-family: Qanelas;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.48px;
+    text-align: left;
+}
+
+.energy__count {
+    background: linear-gradient(90deg, rgba(255, 110, 5, 1) 0%, rgba(248, 60, 39, 1) 100%);
+    width: 105px;
+    height: 30px;
+    border-radius: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.energy__title {
+    font-family: Qanelas;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.48px;
+    text-align: right;
+}
+
+.energy__bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.energy__present {
+    font-family: Qanelas;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.48px;
+    text-align: left;
+}

@@ -1,0 +1,33 @@
+.balance {
+    font-size: 24px;
+    color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance__title {
+    font-family: Japanese;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 55.22px;
+    text-align: center;
+    color: #fff;
+}
+
+.balance__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-image: url(coinsbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    border: 1px solid white;
+    background-position: center;
+    border-radius: 20px;
+    max-width: 390px;
+    height: 93px;
+}

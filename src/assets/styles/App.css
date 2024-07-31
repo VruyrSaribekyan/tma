@@ -1,8 +1,16 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+
+}
+
+.App {
+  background-image: url(Main.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 844px;
+  height: 100vh;
 }
 
 .logo {
@@ -11,9 +19,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +50,22 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@font-face {
+  font-family: 'Japanese';
+  src: url('../fonts/Japanese3017.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Qanelas';
+  src: url('../fonts/Qanelas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Qanelas', sans-serif;
 }
