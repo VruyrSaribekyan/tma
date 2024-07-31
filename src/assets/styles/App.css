@@ -12,6 +12,7 @@
   min-height: 844px;
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 .logo {
@@ -69,4 +70,5 @@
 
 body {
   font-family: 'Qanelas', sans-serif;
+  height: 100vh;
 }
